@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Define shorthands for common git commands
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git pull'
+alias gb='git branch'
+alias gco='git checkout'
+alias gd='git diff'
+
+# TODO(hj): Enable autocomplete for above
+
+# Define sync command for rebase strategy
+function rmain() {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git checkout main
+    git pull --rebase
+    git checkout $current_branch
+    git rebase main
+}
+
+# Define sync command for merge strategy
+function smain() {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git checkout main
+    git pull
+    git checkout $current_branch
+    git merge main
+}
