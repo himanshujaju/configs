@@ -26,8 +26,8 @@
 | `h` `j` `k` `l` | Left, Down, Up, Right    |
 | `w` / `b`   | Next/previous word           |
 | `e`         | End of word                  |
-| `$`         | Start/end of line            |
-| `G`         | Top/bottom of file           |
+| `^` / `$`   | Start/end of line            |
+| `gg` / `G`  | Top/bottom of file           |
 | `%`         | Jump to matching bracket     |
 | `f{char}`   | Find char on line            |
 
